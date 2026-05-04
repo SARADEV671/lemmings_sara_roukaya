@@ -3,6 +3,7 @@
 #include <string>
 #include <fstream>
 
+
 const int ligne = 10;
 const int colonne = 20;
 const int max_lemings = 10;
@@ -127,10 +128,11 @@ void deplace(grille &g, lemming &l, lemings &ls, int compteur)
     // action de lemings : blokeur,parachuteur,batisseur,aucun,creuseur :
     // je commence par qu'elle action est est ce que le fait de commencer par une action va impacter les autres
     //----------1creusuer : il detruit les murs et tombe--------
-    if (l.y + 1 < ligne && g[l.y + 1][l.x] == '#' && l.action == "creuseur")
+    if (l.y + 1 < ligne-1 && g[l.y + 1][l.x] == '#' && l.action == "creuseur")
     {
         g[l.y + 1][l.x] = ' ';
         l.y++;
+         est_sortie(g, l);
         return;
     }
     //---------2-bloqueur : il bouge pas et bloque les autres a bouger horizentalement :
@@ -174,11 +176,13 @@ void deplace(grille &g, lemming &l, lemings &ls, int compteur)
             }
             l.x = prochain_x;
         }
-        else if (g[l.y][prochain_x] == '#' && l.y - 1 >= 0 && g[l.y - 1][prochain_x] == ' ')
+        else if (g[l.y][prochain_x] == '#' && l.y - 1 >= 0 && (g[l.y - 1][prochain_x] == ' ' || g[l.y - 1][prochain_x] == 'E'))
         {
             // marche d'une case : on monte et on avance
             l.x = prochain_x;
             l.y--;
+            if (est_sortie(g, l))
+                return;
         }
 
         else
@@ -293,7 +297,8 @@ int main()
         }
 
         deplace_tt(g, ls, compteur);
-        if (tt_mort(ls, compteur) && nb == compteur)
+        bool plus_de_lemmings = (compteur >= nb);
+        if (tt_mort(ls, compteur) && plus_de_lemmings)
         {
             victoir(compter_sauves(ls, nb), nb);
             fini = true;
