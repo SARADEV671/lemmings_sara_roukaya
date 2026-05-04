@@ -1,0 +1,17 @@
+15 24 4 4 300 
+0 6 6 6 6 
+aaaaaaaaaaaaaaaaaaaaaaaa
+ajjjjjjjjjjjjjjjjjjjjjja
+ajjjj       aaaaaaaaaaaa
+a1             j       a  
+a              jaaaaaaaa
+aaaaaaaaaaaaaa         a                     
+aaaaaaaaaaa            a
+aaaaaaaaaaa       jjjjja
+a         a            a
+a         aaaaaaaaaaaaaa
+a                      a
+aaaaaaaaaaaaaaaaaaaaaaaa
+a                      a
+aaaarrrrr       2aaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaa

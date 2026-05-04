@@ -1,0 +1,12 @@
+10 20 4 4 240
+0 6 6 6 6 6
+aaaaaaaaaaaaaaaaaaaa
+a1                 a
+aaaaaaaaa     aaaaaa
+a                  a
+arrrrrrrrrrrrraaaaaa
+a                  a
+a                  a
+a            aaaaaaa
+a                 2a
+aaaaaaaaaaaaaaaaaaaa

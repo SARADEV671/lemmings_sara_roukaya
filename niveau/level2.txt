@@ -1,0 +1,11 @@
+8 60 4 4 300
+0 4 5 6 0 
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+a1                                                         a
+aaa                            a                           a  
+a                              a                           a
+aaaaaaaa     aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+a                                                          a
+aaaaaaaarrrrraaaaaaaajjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjja
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+ 

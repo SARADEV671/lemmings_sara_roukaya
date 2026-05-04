@@ -1,0 +1,22 @@
+20 40 6 3 999
+0 2 2 2 2 2 0 0 0
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+a1                                     a
+aaaaaaaaaaaaa                          a
+a                                      a
+a            aaaaaaaaaa                a
+a                      a               a
+a                      a    jjjjjj     a
+a            aaaaaaaaaaaaa             a
+a                                      a
+a   rrrrr                              a
+a         aaaaaaaaaaaa                 a
+a                     a                a
+a                     aaaaaaaaaaaa     a
+a                                 a    a
+a                     aaaaaaaaaaaaa    a
+a    jjjjjjj                           a
+a                                      a
+a            aaaaaaaaa           aaa   a
+a                                 a2   a
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa

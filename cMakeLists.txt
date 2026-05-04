@@ -1,0 +1,18 @@
+cmake_minimum_required(VERSION 3.18)
+project(lemmings)
+
+add_compile_options(-Wall)
+
+include_directories(include)
+
+add_executable(lemmings
+    src/grille.cpp
+    src/lemming.cpp
+    src/jeu.cpp
+    src/main_txte.cpp
+)
+
+#cd build
+#cmake --build .
+#.\lemmings.exe*/
+# cmake .. -G "MinGW Makefiles" -DCMAKE_MAKE_PROGRAM=C:/msys64/mingw64/bin/mingw32-make.exe -DCMAKE_CXX_COMPILER=C:/msys64/clang64/bin/clang++.exe -DCMAKE_C_COMPILER

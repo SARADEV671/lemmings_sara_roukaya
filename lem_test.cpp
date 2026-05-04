@@ -92,7 +92,7 @@ struct lemming
     int direction; // gauche=-1 ou doite=1
     bool vivant;
     bool sauve;
-    std::string action; // 5 action : aucun bloqueur creuseur batisseur parachuteur
+    std::string action; // 6 action : aucun bloqueur creuseur batisseur parachuteur foreur
     int hauteur_chute;  // pour detecter la mort
     int nb_brique;      // pour batisseur nb_max = 12
 };
@@ -227,7 +227,7 @@ void deplace(grille &g, lemming &l, int ligne, int colonne, lemings &ls, int com
             l.x = prochain_x;
             est_sortie(g, l);
         }
-        else if (!bloqueur_devant && est_sol(case_devant) && l.y - 1 >= 0 && est_traversable(g[l.y - 1][prochain_x]))// vérifier que la case au-dessus de la destination est libre
+        else if (!bloqueur_devant && est_sol(case_devant) && l.y - 1 >= 0 && est_traversable(g[l.y - 1][prochain_x])) // vérifier que la case au-dessus de la destination est libre
         {
             // marche d'une case : on monte et on avance
             l.x = prochain_x;
@@ -307,11 +307,11 @@ void assigner_competence(lemings &ls, int compteur, competences &comp)
         else if (action == "creuseur" && comp.nb_creuseur == 0)
             std::cout << "Plus de creuseurs !" << std::endl;
         else if (action == "batisseur" && comp.nb_batisseur == 0)
-            std::cout << "Plus de batisseurs !"<<std::endl;
+            std::cout << "Plus de batisseurs !" << std::endl;
         else if (action == "parachuteur" && comp.nb_parachute == 0)
-            std::cout << "Plus de parachuteurs !"<<std::endl;
+            std::cout << "Plus de parachuteurs !" << std::endl;
         else if (action == "foreur" && comp.nb_foreur == 0)
-            std::cout << "Plus de foreur !"<<std::endl;
+            std::cout << "Plus de foreur !" << std::endl;
         else
             valide = true;
 
@@ -337,7 +337,7 @@ int main()
 {
     lemings ls;
     grille g;
-    std::string ch = "./plateau.txt";
+    std::string ch = "./niveau/simple.txt";
     int x_depart = -1;
     int y_depart = -1;
     // int nb = 4;
@@ -359,13 +359,12 @@ int main()
     while (!fini)
     {
         // on créee un lemming tt les 3 tours :
-
         if (tour % 3 == 0 && compteur < max_lem)
         {
             ls[compteur].vivant = true;
             compteur++;
         }
-        // affichage des sauves et vivant et tour
+
         std::cout
             << "Tour : " << tour << " |sauves: " << compter_sauves(ls, max_lem) << " | Vivants : " << compter_vivant(ls, max_lem) << " | Objectif : " << obj_sauvtage << "/" << max_lem << std::endl;
         affiche_plateau(g, ls, ligne, colonne, compteur);
@@ -381,12 +380,12 @@ int main()
         if (choix_joueur == 'q')
             fini = true;
         else if (choix_joueur == 'c')
-
             assigner_competence(ls, compteur, comp);
 
         deplace_tt(g, ls, ligne, colonne, compteur);
+        // affichage des sauves et vivant et tour
         bool plus_de_lemmings = (compteur >= max_lem);
-        if (tt_mort(ls, compteur) && plus_de_lemmings)
+        if (plus_de_lemmings && tt_mort(ls, max_lem))
         {
             victoir(compter_sauves(ls, compteur), max_lem, obj_sauvtage);
             fini = true;
