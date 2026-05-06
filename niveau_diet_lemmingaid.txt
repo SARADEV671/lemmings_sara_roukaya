@@ -1,0 +1,17 @@
+15 40 50 50 300
+0 10 10 10 10 10 10 10 10
+jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj
+j  1               jjjjj               j
+j                  j   j               j
+j               rrrrjjjj               j
+jaaaaaaaa   aaaaaaaajjjj               j
+j                                      j
+j                                      j
+j                        aaaa          j
+j                        aaaa      2   j
+j     aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa j
+j     aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa j
+j     aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa j
+j     aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa j
+jrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrj
+jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj

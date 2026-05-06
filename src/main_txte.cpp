@@ -9,7 +9,7 @@ int main()
 {
     lemings ls;
     grille g;
-    std::string ch = "../niveau/simple.txt";
+    std::string ch = "../niveau/grp1_a_2.lem";
     int x_depart = -1;
     int y_depart = -1;
     // int nb = 4;

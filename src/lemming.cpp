@@ -36,8 +36,11 @@ void deplace(grille &g, lemming &l, int ligne, int colonne, lemings &ls, int com
     char case_dessous = g[l.y + 1][l.x];
     if (est_traversable(case_dessous) || est_liquide(case_dessous))
     {
+        if (l.action == "creuseur")
+            l.action = "aucune";
         l.y++;
         l.hauteur_chute++;
+
         if (est_liquide(g[l.y][l.x]))
         {
             l.vivant = false;
@@ -48,8 +51,10 @@ void deplace(grille &g, lemming &l, int ligne, int colonne, lemings &ls, int com
     }
     //------------atterisssage : on vient de tomber et il y'a le sol ------------
     // si le lemming est tomber on verifie s'il depasser 3 case et n'est pas un parachuteur :
+
     if (l.hauteur_chute > 0)
     {
+
         if (l.hauteur_chute > 6 && l.action != "parachuteur")
         {
             l.vivant = false;
@@ -63,14 +68,26 @@ void deplace(grille &g, lemming &l, int ligne, int colonne, lemings &ls, int com
     //----------1creusuer : il detruit les cases destructubles (a-i) et tombe--------
     if (l.action == "creuseur")
     {
-        if (l.y + 1 < ligne && est_destructible(g[l.y + 1][l.x]))
+        char dessous = g[l.y + 1][l.x];
+
+        if (l.y + 1 < ligne && est_destructible(dessous))
         {
             g[l.y + 1][l.x] = ' ';
             l.y++;
             est_sortie(g, l);
         }
-        else
+        else if (dessous == ' ')
+        {
+            // vide → il tombe et arrête de creuser
             l.action = "aucune";
+            l.y++;
+        }
+        else
+        {
+            // bloc indestructible
+            l.action = "aucune";
+        }
+
         return;
     }
     //---------2-bloqueur : il bouge pas et bloque les autres a bouger horizentalement :

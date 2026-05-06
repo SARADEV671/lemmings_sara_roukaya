@@ -161,7 +161,7 @@ bool lire_plateau(grille &g, std::string ch, int &depart_x, int &depart_y, int &
         return false;
     }
 
-    return true; 
+    return true;
 }
 
 //-------------definition d'un lemming ------------
@@ -200,7 +200,7 @@ void affiche_plateau(const grille &g, lemings ls, int ligne, int colonne, int co
 
 //-----------deplacement de lemings --------------------
 // detecter si le lemming est dans la sortie  :
-bool est_sortie(const grille &g,  lemming &l)
+bool est_sortie(const grille &g, lemming &l)
 {
     if (g[l.y][l.x] == '2')
     {
@@ -230,8 +230,11 @@ void deplace(grille &g, lemming &l, int ligne, int colonne, lemings &ls, int com
     char case_dessous = g[l.y + 1][l.x];
     if (est_traversable(case_dessous) || est_liquide(case_dessous))
     {
+        if (l.action == "creuseur")
+            l.action = "aucune";
         l.y++;
         l.hauteur_chute++;
+
         if (est_liquide(g[l.y][l.x]))
         {
             l.vivant = false;
@@ -242,8 +245,10 @@ void deplace(grille &g, lemming &l, int ligne, int colonne, lemings &ls, int com
     }
     //------------atterisssage : on vient de tomber et il y'a le sol ------------
     // si le lemming est tomber on verifie s'il depasser 3 case et n'est pas un parachuteur :
+
     if (l.hauteur_chute > 0)
     {
+
         if (l.hauteur_chute > 6 && l.action != "parachuteur")
         {
             l.vivant = false;
@@ -257,14 +262,26 @@ void deplace(grille &g, lemming &l, int ligne, int colonne, lemings &ls, int com
     //----------1creusuer : il detruit les cases destructubles (a-i) et tombe--------
     if (l.action == "creuseur")
     {
-        if (l.y + 1 < ligne && est_destructible(g[l.y + 1][l.x]))
+        char dessous = g[l.y + 1][l.x];
+
+        if (l.y + 1 < ligne && est_destructible(dessous))
         {
             g[l.y + 1][l.x] = ' ';
             l.y++;
             est_sortie(g, l);
         }
-        else
+        else if (dessous == ' ')
+        {
+            // vide → il tombe et arrête de creuser
             l.action = "aucune";
+            l.y++;
+        }
+        else
+        {
+            // bloc indestructible
+            l.action = "aucune";
+        }
+
         return;
     }
     //---------2-bloqueur : il bouge pas et bloque les autres a bouger horizentalement :
@@ -451,7 +468,7 @@ int main()
 {
     lemings ls;
     grille g;
-    std::string ch = "./niveau/simple.txt";
+    std::string ch = "./niveau/simple.lem";
     int x_depart = -1;
     int y_depart = -1;
     // int nb = 4;

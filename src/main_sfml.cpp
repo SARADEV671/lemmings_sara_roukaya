@@ -62,14 +62,36 @@ int main()
     spr_cursor.setScale(2.f, 2.f);
     // fenetre.setMouseCursorVisible(false);
     //  la boucle principale
+    std::string actions[] = {"bloqueur", "creuseur", "batisseur", "parachuteur", "foreur"};
+    int coords_x[] = {80, 0, 16, 64, 48};
+    int coords_y[] = {0, 32, 32, 32, 32};
+    int y_hud = ligne * TAILLE_CASE + 10;
+    std::string competence_selectionnee = "aucune";
     while (fenetre.isOpen())
     {
         sf::Event evenement;
+        // détecte la fermeture
+        if (evenement.type == sf::Event::Closed)
+            fenetre.close();
+
         // écoute les événements
         while (fenetre.pollEvent(evenement))
-            // détecte la fermeture
-            if (evenement.type == sf::Event::Closed)
-                fenetre.close();
+        {
+            if (evenement.type == sf::Event::MouseButtonPressed)
+            {
+                int mx = evenement.mouseButton.x;
+                int my = evenement.mouseButton.y;
+                if (my >= y_hud)
+                {
+                    for (int i = 0; i < 5; i++)
+                    {
+                        int bx = 10 + i * 40;
+                        if (mx >= bx && mx <= bx + 30)
+                            competence_selectionnee = actions[i];
+                    }
+                }
+            }
+        }
 
         // --- logique : avancer d'un tour toutes les 0.3 secondes ---
         if (clock.getElapsedTime().asSeconds() > 0.3f)
@@ -141,9 +163,7 @@ int main()
 
         // dessiner la barre des competences
         int y_hud = ligne * TAILLE_CASE + 10;
-        std::string actions[] = {"bloqueur", "creuseur", "batisseur", "parachuteur", "foreur"};
-        int coords_x[] = {80, 0, 16, 64, 48};
-        int coords_y[] = {0, 32, 32, 32, 32};
+
         for (int i = 0; i < 5; i++)
         {
             spr_bouton.setTextureRect(sf::IntRect(coords_x[i], coords_y[i], 15, 23));
