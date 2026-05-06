@@ -76,60 +76,60 @@ CMakeFiles/lemmings.dir/src/grille.cpp.obj: CMakeFiles/lemmings.dir/includes_CXX
 CMakeFiles/lemmings.dir/src/grille.cpp.obj: C:/Users/Destock/Downloads/projet_lemmings/src/grille.cpp
 CMakeFiles/lemmings.dir/src/grille.cpp.obj: CMakeFiles/lemmings.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Destock\Downloads\projet_lemmings\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/lemmings.dir/src/grille.cpp.obj"
-	C:\msys64\clang64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/lemmings.dir/src/grille.cpp.obj -MF CMakeFiles\lemmings.dir\src\grille.cpp.obj.d -o CMakeFiles\lemmings.dir\src\grille.cpp.obj -c C:\Users\Destock\Downloads\projet_lemmings\src\grille.cpp
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/lemmings.dir/src/grille.cpp.obj -MF CMakeFiles\lemmings.dir\src\grille.cpp.obj.d -o CMakeFiles\lemmings.dir\src\grille.cpp.obj -c C:\Users\Destock\Downloads\projet_lemmings\src\grille.cpp
 
 CMakeFiles/lemmings.dir/src/grille.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/lemmings.dir/src/grille.cpp.i"
-	C:\msys64\clang64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Destock\Downloads\projet_lemmings\src\grille.cpp > CMakeFiles\lemmings.dir\src\grille.cpp.i
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Destock\Downloads\projet_lemmings\src\grille.cpp > CMakeFiles\lemmings.dir\src\grille.cpp.i
 
 CMakeFiles/lemmings.dir/src/grille.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/lemmings.dir/src/grille.cpp.s"
-	C:\msys64\clang64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Destock\Downloads\projet_lemmings\src\grille.cpp -o CMakeFiles\lemmings.dir\src\grille.cpp.s
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Destock\Downloads\projet_lemmings\src\grille.cpp -o CMakeFiles\lemmings.dir\src\grille.cpp.s
 
 CMakeFiles/lemmings.dir/src/lemming.cpp.obj: CMakeFiles/lemmings.dir/flags.make
 CMakeFiles/lemmings.dir/src/lemming.cpp.obj: CMakeFiles/lemmings.dir/includes_CXX.rsp
 CMakeFiles/lemmings.dir/src/lemming.cpp.obj: C:/Users/Destock/Downloads/projet_lemmings/src/lemming.cpp
 CMakeFiles/lemmings.dir/src/lemming.cpp.obj: CMakeFiles/lemmings.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Destock\Downloads\projet_lemmings\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/lemmings.dir/src/lemming.cpp.obj"
-	C:\msys64\clang64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/lemmings.dir/src/lemming.cpp.obj -MF CMakeFiles\lemmings.dir\src\lemming.cpp.obj.d -o CMakeFiles\lemmings.dir\src\lemming.cpp.obj -c C:\Users\Destock\Downloads\projet_lemmings\src\lemming.cpp
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/lemmings.dir/src/lemming.cpp.obj -MF CMakeFiles\lemmings.dir\src\lemming.cpp.obj.d -o CMakeFiles\lemmings.dir\src\lemming.cpp.obj -c C:\Users\Destock\Downloads\projet_lemmings\src\lemming.cpp
 
 CMakeFiles/lemmings.dir/src/lemming.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/lemmings.dir/src/lemming.cpp.i"
-	C:\msys64\clang64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Destock\Downloads\projet_lemmings\src\lemming.cpp > CMakeFiles\lemmings.dir\src\lemming.cpp.i
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Destock\Downloads\projet_lemmings\src\lemming.cpp > CMakeFiles\lemmings.dir\src\lemming.cpp.i
 
 CMakeFiles/lemmings.dir/src/lemming.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/lemmings.dir/src/lemming.cpp.s"
-	C:\msys64\clang64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Destock\Downloads\projet_lemmings\src\lemming.cpp -o CMakeFiles\lemmings.dir\src\lemming.cpp.s
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Destock\Downloads\projet_lemmings\src\lemming.cpp -o CMakeFiles\lemmings.dir\src\lemming.cpp.s
 
 CMakeFiles/lemmings.dir/src/jeu.cpp.obj: CMakeFiles/lemmings.dir/flags.make
 CMakeFiles/lemmings.dir/src/jeu.cpp.obj: CMakeFiles/lemmings.dir/includes_CXX.rsp
 CMakeFiles/lemmings.dir/src/jeu.cpp.obj: C:/Users/Destock/Downloads/projet_lemmings/src/jeu.cpp
 CMakeFiles/lemmings.dir/src/jeu.cpp.obj: CMakeFiles/lemmings.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Destock\Downloads\projet_lemmings\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/lemmings.dir/src/jeu.cpp.obj"
-	C:\msys64\clang64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/lemmings.dir/src/jeu.cpp.obj -MF CMakeFiles\lemmings.dir\src\jeu.cpp.obj.d -o CMakeFiles\lemmings.dir\src\jeu.cpp.obj -c C:\Users\Destock\Downloads\projet_lemmings\src\jeu.cpp
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/lemmings.dir/src/jeu.cpp.obj -MF CMakeFiles\lemmings.dir\src\jeu.cpp.obj.d -o CMakeFiles\lemmings.dir\src\jeu.cpp.obj -c C:\Users\Destock\Downloads\projet_lemmings\src\jeu.cpp
 
 CMakeFiles/lemmings.dir/src/jeu.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/lemmings.dir/src/jeu.cpp.i"
-	C:\msys64\clang64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Destock\Downloads\projet_lemmings\src\jeu.cpp > CMakeFiles\lemmings.dir\src\jeu.cpp.i
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Destock\Downloads\projet_lemmings\src\jeu.cpp > CMakeFiles\lemmings.dir\src\jeu.cpp.i
 
 CMakeFiles/lemmings.dir/src/jeu.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/lemmings.dir/src/jeu.cpp.s"
-	C:\msys64\clang64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Destock\Downloads\projet_lemmings\src\jeu.cpp -o CMakeFiles\lemmings.dir\src\jeu.cpp.s
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Destock\Downloads\projet_lemmings\src\jeu.cpp -o CMakeFiles\lemmings.dir\src\jeu.cpp.s
 
 CMakeFiles/lemmings.dir/src/main_txte.cpp.obj: CMakeFiles/lemmings.dir/flags.make
 CMakeFiles/lemmings.dir/src/main_txte.cpp.obj: CMakeFiles/lemmings.dir/includes_CXX.rsp
 CMakeFiles/lemmings.dir/src/main_txte.cpp.obj: C:/Users/Destock/Downloads/projet_lemmings/src/main_txte.cpp
 CMakeFiles/lemmings.dir/src/main_txte.cpp.obj: CMakeFiles/lemmings.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Destock\Downloads\projet_lemmings\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/lemmings.dir/src/main_txte.cpp.obj"
-	C:\msys64\clang64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/lemmings.dir/src/main_txte.cpp.obj -MF CMakeFiles\lemmings.dir\src\main_txte.cpp.obj.d -o CMakeFiles\lemmings.dir\src\main_txte.cpp.obj -c C:\Users\Destock\Downloads\projet_lemmings\src\main_txte.cpp
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/lemmings.dir/src/main_txte.cpp.obj -MF CMakeFiles\lemmings.dir\src\main_txte.cpp.obj.d -o CMakeFiles\lemmings.dir\src\main_txte.cpp.obj -c C:\Users\Destock\Downloads\projet_lemmings\src\main_txte.cpp
 
 CMakeFiles/lemmings.dir/src/main_txte.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/lemmings.dir/src/main_txte.cpp.i"
-	C:\msys64\clang64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Destock\Downloads\projet_lemmings\src\main_txte.cpp > CMakeFiles\lemmings.dir\src\main_txte.cpp.i
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Destock\Downloads\projet_lemmings\src\main_txte.cpp > CMakeFiles\lemmings.dir\src\main_txte.cpp.i
 
 CMakeFiles/lemmings.dir/src/main_txte.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/lemmings.dir/src/main_txte.cpp.s"
-	C:\msys64\clang64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Destock\Downloads\projet_lemmings\src\main_txte.cpp -o CMakeFiles\lemmings.dir\src\main_txte.cpp.s
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Destock\Downloads\projet_lemmings\src\main_txte.cpp -o CMakeFiles\lemmings.dir\src\main_txte.cpp.s
 
 # Object files for target lemmings
 lemmings_OBJECTS = \

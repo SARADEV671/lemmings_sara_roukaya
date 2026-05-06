@@ -20,7 +20,8 @@ int main()
     int colonne = 20;
     competences comp = {0, 0, 0, 0, 0, 0, 0, 0, 0};
 
-    lire_plateau(g, ch, x_depart, y_depart, ligne, colonne, max_lem, obj_sauvtage, chrono, comp);
+    if (!lire_plateau(g, ch, x_depart, y_depart, ligne, colonne, max_lem, obj_sauvtage, chrono, comp))
+        return 1;
     for (int k = 0; k < max_lemmings; k++)
     {
         ls[k] = {y_depart, x_depart, 1, false, false, "aucune", 0, 12};
@@ -59,7 +60,7 @@ int main()
         bool plus_de_lemmings = (compteur >= max_lem);
         if (plus_de_lemmings && tt_mort(ls, max_lem))
         {
-            victoir(compter_sauves(ls, compteur), max_lem, obj_sauvtage);
+            victoir(compter_sauves(ls, max_lem), max_lem, obj_sauvtage);
             fini = true;
         }
 

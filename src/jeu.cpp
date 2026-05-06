@@ -1,7 +1,7 @@
 #include "jeu.hpp"
 #include <iostream>
 //------------nb_lemings_sauvee_________________
-int compter_sauves(lemings ls, int max_lem)
+int compter_sauves(const lemings &ls, int max_lem)
 {
     int sauve = 0;
     for (int k = 0; k < max_lem; k++)
@@ -10,7 +10,7 @@ int compter_sauves(lemings ls, int max_lem)
     return sauve;
 }
 // nb_lemings_vivant------
-int compter_vivant(lemings ls, int max_lem)
+int compter_vivant(const lemings &ls, int max_lem)
 {
     int vivants = 0;
     for (int k = 0; k < max_lem; k++)
@@ -29,7 +29,7 @@ void victoir(int sauves, int max_lem, int obj_sauvtage)
         std::cout << "DEFAITE! " << sauves << "/" << max_lem << "lemings sauve!" << std::endl;
 }
 //-----------verifier si tt est mort -------------
-bool tt_mort(lemings ls, int max_lem)
+bool tt_mort(const lemings &ls, int max_lem)
 {
     for (int k = 0; k < max_lem; k++)
         if (ls[k].vivant)
@@ -63,6 +63,8 @@ void assigner_competence(lemings &ls, int compteur, competences &comp)
             std::cout << "Plus de parachuteurs !" << std::endl;
         else if (action == "foreur" && comp.nb_foreur == 0)
             std::cout << "Plus de foreur !" << std::endl;
+        else if (action != "bloqueur" && action != "creuseur" && action != "batisseur" && action != "parachuteur" && action != "foreur")
+            std::cout << "Action inconnue : " << action << " !" << std::endl;
         else
             valide = true;
 

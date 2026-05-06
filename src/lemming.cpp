@@ -3,7 +3,7 @@
 
 //-----------deplacement de lemings --------------------
 // detecter si le lemming est dans la sortie  :
-bool est_sortie(grille g, lemming &l)
+bool est_sortie(const grille &g, lemming &l)
 {
     if (g[l.y][l.x] == '2')
     {
@@ -16,11 +16,19 @@ bool est_sortie(grille g, lemming &l)
 // le lemming l est le sujet de l'action
 // le tableau de lemming dans le procedure deplacement juste pour detecter les bloqueur :
 // action de lemings : blokeur,parachuteur,batisseur,aucun,creuseur :
+// le lemming l est le sujet de l'action
+// le tableau de lemming dans le procedure deplacement juste pour detecter les bloqueur :
+// action de lemings : blokeur,parachuteur,batisseur,aucun,creuseur :
 void deplace(grille &g, lemming &l, int ligne, int colonne, lemings &ls, int compteur)
 {
     // si le lemming est mort on sort :
-    if (!l.vivant || l.y + 1 >= ligne) // mort ou depasse les limites de la grille
+    if (!l.vivant)
         return;
+    if (l.y + 1 >= ligne)
+    {
+        l.vivant = false;
+        return;
+    }
     // si le lemming dans le point de sortie : il est sauve et il mort
     if (est_sortie(g, l))
         return;
@@ -48,14 +56,21 @@ void deplace(grille &g, lemming &l, int ligne, int colonne, lemings &ls, int com
             return;
         }
         l.hauteur_chute = 0;
+        if (l.action == "parachuteur")
+            l.action = "aucune";
     }
     // est est ce que le fait de commencer par une action va impacter les autres?????
     //----------1creusuer : il detruit les cases destructubles (a-i) et tombe--------
-    if (l.action == "creuseur" && l.y + 1 < ligne - 1 && est_destructible(g[l.y + 1][l.x]))
+    if (l.action == "creuseur")
     {
-        g[l.y + 1][l.x] = ' ';
-        l.y++;
-        est_sortie(g, l);
+        if (l.y + 1 < ligne && est_destructible(g[l.y + 1][l.x]))
+        {
+            g[l.y + 1][l.x] = ' ';
+            l.y++;
+            est_sortie(g, l);
+        }
+        else
+            l.action = "aucune";
         return;
     }
     //---------2-bloqueur : il bouge pas et bloque les autres a bouger horizentalement :
@@ -65,9 +80,13 @@ void deplace(grille &g, lemming &l, int ligne, int colonne, lemings &ls, int com
     int prochain_x = l.x + l.direction;
     if (l.action == "batisseur" && l.nb_brique > 0)
     {
-        if (prochain_x >= 0 && prochain_x < colonne && l.y - 1 >= 0 && est_traversable(g[l.y][prochain_x]) && est_traversable(g[l.y - 1][prochain_x]))
+        if (prochain_x >= 0 && prochain_x < colonne && l.y - 1 >= 0 && g[l.y][prochain_x] == ' ' && est_traversable(g[l.y - 1][prochain_x]))
         {
-            g[l.y][prochain_x] = 'a';
+            if (l.direction == 1)
+                g[l.y][prochain_x] = '/';
+            else
+                g[l.y][prochain_x] = '\\';
+
             l.x = prochain_x;
             l.y--;
             l.nb_brique--;
@@ -82,18 +101,34 @@ void deplace(grille &g, lemming &l, int ligne, int colonne, lemings &ls, int com
         }
     }
     // 4 foreur : creuse horizontalement (a-i uniquement)
-    if (l.action == "foreur")
+    if (l.action == "foreur" && prochain_x >= 0 && prochain_x < colonne)
     {
-        if (prochain_x >= 0 && prochain_x < colonne && est_destructible(g[l.y][prochain_x]))
+        char devant = g[l.y][prochain_x];
+        if (est_liquide(devant))
+        {
+            l.vivant = false;
+            return;
+        }
+        if (est_destructible(devant))
         {
             g[l.y][prochain_x] = ' ';
+
             l.x = prochain_x;
             est_sortie(g, l);
             return;
         }
-        else
-            l.action = "aucune"; // béton ou bord : redevient normal
+        if (est_traversable(devant))
+        {
+            l.action = "aucune";
+            l.x = prochain_x;
+            est_sortie(g, l);
+            return;
+        }
+
+        l.action = "aucune";
+        return;
     }
+
     // ----------deplacement_horizentale ---------
     if (prochain_x >= 0 && prochain_x < colonne)
     {
@@ -105,13 +140,14 @@ void deplace(grille &g, lemming &l, int ligne, int colonne, lemings &ls, int com
         // case vide ou sortie ;
         if (!bloqueur_devant && est_traversable(case_devant))
         {
-
             l.x = prochain_x;
-            est_sortie(g, l);
+            if (est_sortie(g, l))
+                return;
         }
-        else if (!bloqueur_devant && est_sol(case_devant) && l.y - 1 >= 0 && est_traversable(g[l.y - 1][prochain_x])) // vérifier que la case au-dessus de la destination est libre
+        // grimper un escalier
+        else if (!bloqueur_devant && est_escalier(case_devant) && l.y - 1 >= 0 && est_traversable(g[l.y - 1][prochain_x])) // vérifier que la case au-dessus de la destination est libre
         {
-            // marche d'une case : on monte et on avance
+            // un escalier il monte une case :
             l.x = prochain_x;
             l.y--;
             if (est_sortie(g, l))

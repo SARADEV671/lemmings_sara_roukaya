@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 3.18)
 project(lemmings)
-
+# chercher SFML
+#find_package(SFML 2.5 COMPONENTS graphics window system REQUIRED)
 add_compile_options(-Wall)
 
 include_directories(include)
@@ -11,8 +12,11 @@ add_executable(lemmings
     src/jeu.cpp
     src/main_txte.cpp
 )
+# lier SFML
+#target_link_libraries(lemmings sfml-graphics sfml-window sfml-system)
+# etape 1 : cd build
+#etape 2:cmake .. -G "MinGW Makefiles" -DCMAKE_MAKE_PROGRAM=C:/msys64/mingw64/bin/mingw32-make.exe -DCMAKE_CXX_COMPILER=C:/msys64/mingw64/bin/g++.exe -DCMAKE_C_COMPILER=C:/msys64/mingw64/bin/gcc.exe
 
-#cd build
-#cmake --build .
-#.\lemmings.exe*/
+#etape3 :cmake --build .
+#etape 4.\lemmings.exe
 # cmake .. -G "MinGW Makefiles" -DCMAKE_MAKE_PROGRAM=C:/msys64/mingw64/bin/mingw32-make.exe -DCMAKE_CXX_COMPILER=C:/msys64/clang64/bin/clang++.exe -DCMAKE_C_COMPILER
