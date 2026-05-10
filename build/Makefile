@@ -128,6 +128,30 @@ lemmings/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\lemmings.dir\build.make CMakeFiles/lemmings.dir/build
 .PHONY : lemmings/fast
 
+src/affichage_sfml.obj: src/affichage_sfml.cpp.obj
+.PHONY : src/affichage_sfml.obj
+
+# target to build an object file
+src/affichage_sfml.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\lemmings.dir\build.make CMakeFiles/lemmings.dir/src/affichage_sfml.cpp.obj
+.PHONY : src/affichage_sfml.cpp.obj
+
+src/affichage_sfml.i: src/affichage_sfml.cpp.i
+.PHONY : src/affichage_sfml.i
+
+# target to preprocess a source file
+src/affichage_sfml.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\lemmings.dir\build.make CMakeFiles/lemmings.dir/src/affichage_sfml.cpp.i
+.PHONY : src/affichage_sfml.cpp.i
+
+src/affichage_sfml.s: src/affichage_sfml.cpp.s
+.PHONY : src/affichage_sfml.s
+
+# target to generate assembly for a file
+src/affichage_sfml.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\lemmings.dir\build.make CMakeFiles/lemmings.dir/src/affichage_sfml.cpp.s
+.PHONY : src/affichage_sfml.cpp.s
+
 src/grille.obj: src/grille.cpp.obj
 .PHONY : src/grille.obj
 
@@ -200,29 +224,29 @@ src/lemming.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\lemmings.dir\build.make CMakeFiles/lemmings.dir/src/lemming.cpp.s
 .PHONY : src/lemming.cpp.s
 
-src/main_txte.obj: src/main_txte.cpp.obj
-.PHONY : src/main_txte.obj
+src/main_sfml.obj: src/main_sfml.cpp.obj
+.PHONY : src/main_sfml.obj
 
 # target to build an object file
-src/main_txte.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\lemmings.dir\build.make CMakeFiles/lemmings.dir/src/main_txte.cpp.obj
-.PHONY : src/main_txte.cpp.obj
+src/main_sfml.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\lemmings.dir\build.make CMakeFiles/lemmings.dir/src/main_sfml.cpp.obj
+.PHONY : src/main_sfml.cpp.obj
 
-src/main_txte.i: src/main_txte.cpp.i
-.PHONY : src/main_txte.i
+src/main_sfml.i: src/main_sfml.cpp.i
+.PHONY : src/main_sfml.i
 
 # target to preprocess a source file
-src/main_txte.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\lemmings.dir\build.make CMakeFiles/lemmings.dir/src/main_txte.cpp.i
-.PHONY : src/main_txte.cpp.i
+src/main_sfml.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\lemmings.dir\build.make CMakeFiles/lemmings.dir/src/main_sfml.cpp.i
+.PHONY : src/main_sfml.cpp.i
 
-src/main_txte.s: src/main_txte.cpp.s
-.PHONY : src/main_txte.s
+src/main_sfml.s: src/main_sfml.cpp.s
+.PHONY : src/main_sfml.s
 
 # target to generate assembly for a file
-src/main_txte.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\lemmings.dir\build.make CMakeFiles/lemmings.dir/src/main_txte.cpp.s
-.PHONY : src/main_txte.cpp.s
+src/main_sfml.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\lemmings.dir\build.make CMakeFiles/lemmings.dir/src/main_sfml.cpp.s
+.PHONY : src/main_sfml.cpp.s
 
 # Help Target
 help:
@@ -233,6 +257,9 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... lemmings
+	@echo ... src/affichage_sfml.obj
+	@echo ... src/affichage_sfml.i
+	@echo ... src/affichage_sfml.s
 	@echo ... src/grille.obj
 	@echo ... src/grille.i
 	@echo ... src/grille.s
@@ -242,9 +269,9 @@ help:
 	@echo ... src/lemming.obj
 	@echo ... src/lemming.i
 	@echo ... src/lemming.s
-	@echo ... src/main_txte.obj
-	@echo ... src/main_txte.i
-	@echo ... src/main_txte.s
+	@echo ... src/main_sfml.obj
+	@echo ... src/main_sfml.i
+	@echo ... src/main_sfml.s
 .PHONY : help
 
 

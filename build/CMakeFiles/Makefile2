@@ -84,12 +84,12 @@ clean: CMakeFiles/lemmings.dir/clean
 CMakeFiles/lemmings.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\lemmings.dir\build.make CMakeFiles/lemmings.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\lemmings.dir\build.make CMakeFiles/lemmings.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\Destock\Downloads\projet_lemmings\build\CMakeFiles --progress-num=1,2,3,4,5 "Built target lemmings"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\Destock\Downloads\projet_lemmings\build\CMakeFiles --progress-num=1,2,3,4,5,6 "Built target lemmings"
 .PHONY : CMakeFiles/lemmings.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/lemmings.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Destock\Downloads\projet_lemmings\build\CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Destock\Downloads\projet_lemmings\build\CMakeFiles 6
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/lemmings.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Destock\Downloads\projet_lemmings\build\CMakeFiles 0
 .PHONY : CMakeFiles/lemmings.dir/rule
@@ -101,7 +101,7 @@ lemmings: CMakeFiles/lemmings.dir/rule
 # codegen rule for target.
 CMakeFiles/lemmings.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\lemmings.dir\build.make CMakeFiles/lemmings.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\Destock\Downloads\projet_lemmings\build\CMakeFiles --progress-num=1,2,3,4,5 "Finished codegen for target lemmings"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\Destock\Downloads\projet_lemmings\build\CMakeFiles --progress-num=1,2,3,4,5,6 "Finished codegen for target lemmings"
 .PHONY : CMakeFiles/lemmings.dir/codegen
 
 # clean rule for target.

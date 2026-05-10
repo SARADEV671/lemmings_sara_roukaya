@@ -44,6 +44,11 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/4.3.2/CMakeCXXCompiler.cmake"
   "CMakeFiles/4.3.2/CMakeRCCompiler.cmake"
   "CMakeFiles/4.3.2/CMakeSystem.cmake"
+  "C:/msys64/mingw64/lib/cmake/SFML/SFMLConfig.cmake"
+  "C:/msys64/mingw64/lib/cmake/SFML/SFMLConfigDependencies.cmake"
+  "C:/msys64/mingw64/lib/cmake/SFML/SFMLConfigVersion.cmake"
+  "C:/msys64/mingw64/lib/cmake/SFML/SFMLSharedTargets-release.cmake"
+  "C:/msys64/mingw64/lib/cmake/SFML/SFMLSharedTargets.cmake"
   )
 
 # The corresponding makefile is:
